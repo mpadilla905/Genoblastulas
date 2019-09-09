@@ -8,8 +8,8 @@
 #        Altura esta medida en metros y Calzado en cm
 
 rm(list=ls())
-setwd("~/Downloads")
-setwd("~/Documents/")
+#setwd("~/Downloads")
+#setwd("~/Documents/")
 ####################################
 #    Internalizacion de datos      #
 ####################################
@@ -57,3 +57,34 @@ hist(D_mex$PigmBrAvg[M_mex],freq=F,xlim=c(34,50),col=rgb(0.9, 0.1, 0.1, 0.3),mai
 hist(D_mex$PigmBrAvg[H_mex],freq=F,xlim=c(34,50),col=rgb(0.1, 0.9, 0.1, 0.3),add=T,breaks=8)
 legend("topright", c("Mujeres", "Hombres"), col=c(rgb(0.9, 0.1, 0.1, 0.3),rgb(0.1, 0.9, 0.1, 0.3)), lwd=10)
 D
+
+#Altura
+hist(D_mex$Altura[M_mex],freq=F,xlim=c(1.5,1.85),col=rgb(0.9, 0.1, 0.1, 0.3),main='Altura'
+     ,xlab="Altura en m",ylab="Densidad",breaks=5)
+hist(D_mex$Altura[H_mex],freq=F,xlim=c(1.5,1.85),col=rgb(0.1, 0.9, 0.1, 0.3),add=T,breaks=5)
+legend("topright", c("Mujeres", "Hombres"), col=c(rgb(0.9, 0.1, 0.1, 0.3),rgb(0.1, 0.9, 0.1, 0.3)), lwd=10)
+
+#Calzado
+hist(D_mex$Calzado[M_mex],freq=F,xlim=c(23,29),col=rgb(0.9, 0.1, 0.1, 0.3),main='Longitud de calzado'
+     ,xlab="Calzado en cm",ylab="Densidad",breaks=6)
+hist(D_mex$Calzado[H_mex],freq=F,xlim=c(23,29),col=rgb(0.1, 0.9, 0.1, 0.3),add=T,breaks=6)
+legend("topright", c("Mujeres", "Hombres"), col=c(rgb(0.9, 0.1, 0.1, 0.3),rgb(0.1, 0.9, 0.1, 0.3)), lwd=10)
+
+#Presion sistolica
+hist(D_mex$PS_Sis[M_mex],freq=F,xlim=c(90,140),col=rgb(0.9, 0.1, 0.1, 0.3),main='Presion sistolica'
+     ,xlab="Presion sistolica",ylab="Densidad",breaks=8)
+hist(D_mex$PS_Sis[H_mex],freq=F,xlim=c(90,140),col=rgb(0.1, 0.9, 0.1, 0.3),add=T,breaks=8)
+legend("topright", c("Mujeres", "Hombres"), col=c(rgb(0.9, 0.1, 0.1, 0.3),rgb(0.1, 0.9, 0.1, 0.3)), lwd=10)
+
+#Presion diastolica
+hist(D_mex$PS_Dia[M_mex],freq=F,xlim=c(40,100),col=rgb(0.9, 0.1, 0.1, 0.3),main='Presion diastolica'
+     ,xlab="Presion diastolica",ylab="Densidad",breaks=6)
+hist(D_mex$PS_Dia[H_mex],freq=F,xlim=c(40,100),col=rgb(0.1, 0.9, 0.1, 0.3),add=T,breaks=8)
+legend("topright", c("Mujeres", "Hombres"), col=c(rgb(0.9, 0.1, 0.1, 0.3),rgb(0.1, 0.9, 0.1, 0.3)), lwd=10)
+
+#Bronceado
+hist(D_mex$PigmFrAvg[M_mex]-D_mex$PigmBrAvg[M_mex],freq=F,xlim=c(-1,20),col=rgb(0.9, 0.1, 0.1, 0.3),main='Pigmentación en brazos por sexo ("genético")'
+     ,xlab="Nivel de pigmentación",ylab="Densidad",breaks=8)
+hist(D_mex$PigmFrAvg[H_mex]-D_mex$PigmBrAvg[H_mex],freq=F,xlim=c(-1,20),col=rgb(0.1, 0.9, 0.1, 0.3),add=T,breaks=8)
+legend("topright", c("Mujeres", "Hombres"), col=c(rgb(0.9, 0.1, 0.1, 0.3),rgb(0.1, 0.9, 0.1, 0.3)), lwd=8)
+
